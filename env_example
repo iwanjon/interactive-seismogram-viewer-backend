@@ -1,0 +1,44 @@
+DATABASE_URL=mysql+pymysql://aa:aa@localhost:33/seisv
+BMKG_URL=hgo.id
+BMKG_USERNAME=b
+BMKG_PASSWORD=in
+MAX_DISPLAY_POINTS=150000
+CACHE_WINDOW_SECONDS=3600
+HOURLY_CACHE_CLEAR_TIME=00:00
+
+# --- Konfigurasi operasional ---
+# Timeout request FDSN/BMKG (detik).
+FDSN_TIMEOUT_SECONDS=20
+# Retry download waveform: jumlah percobaan & delay antar percobaan (detik).
+MAX_DOWNLOAD_ATTEMPTS=3
+RETRY_DELAY_SECONDS=2
+# Gap waveform
+GAP_THRESHOLD_PERCENT=30
+# ProcessingCache (L1): TTL (detik), jumlah entry, batas ukuran (bytes).
+PROCESSING_CACHE_TTL_SECONDS=300
+PROCESSING_CACHE_MAX_ENTRIES=20
+PROCESSING_CACHE_MAX_SIZE_BYTES=200000000
+# Instrument Response L1 cache: TTL (detik) & jumlah entry.
+RESPONSE_CACHE_TTL_SECONDS=300
+RESPONSE_CACHE_MAX_ENTRIES=20
+# Interval sweep ProcessingCache (detik) & backoff retry cleanup error (detik).
+PROCESSING_SWEEP_INTERVAL_SECONDS=60
+CACHE_CLEANUP_RETRY_SECONDS=3600
+# Panjang segmen PSD (detik) utk ObsPy PPSD; waveform lebih pendek ditolak.
+PPSD_LENGTH_SECONDS=300
+# Overlap segmen PSD (0..1) utk ObsPy PPSD.
+PPSD_OVERLAP=0.5
+# Cache hasil PSD (RAM-only, ephemeral).
+PSD_CACHE_TTL_SECONDS=300
+PSD_CACHE_MAX_ENTRIES=20
+# Cache hasil Spectrogram (RAM-only, ephemeral).
+SPECTROGRAM_CACHE_TTL_SECONDS=300
+SPECTROGRAM_CACHE_MAX_ENTRIES=20
+# Konfigurasi HVSR
+HVSR_WINDOW_SECONDS=60
+HVSR_FMIN=0.1
+HVSR_FMAX=50
+HVSR_REJECTION_ENABLED=false
+# Cache hasil HVSR (RAM-only, ephemeral).
+HVSR_CACHE_TTL_SECONDS=300
+HVSR_CACHE_MAX_ENTRIES=20
